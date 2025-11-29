@@ -68,15 +68,19 @@ def analyze_text(text):
 
 
 
-text = "'dfd' ''foo  bar' foo-bar foo'bar foo''bar ''foo ''foo'' café's pizza:bread:burger"
+# text = "'dfd' ''foo  bar' foo-bar foo'bar foo''bar ''foo ''foo'' café's pizza:bread:burger"
+# print(analyze_text(text))
+
+text="The quick brown fox jumps over the lazy dog the fox" 
 print(analyze_text(text))
 
-text=" The quick brown fox jumps over the lazy dog. The dog barked back at the fox! "
-print(analyze_text("'dfd' ''foo  bar' foo-bar foo'bar'"))
-print(analyze_text("11 22 33 11 22 11' 33')()"))
-print(analyze_text(text))
-print(analyze_text(12345))  
-print(analyze_text(""))  
-print(analyze_text("!!! ??? ... ;;::--''")) 
+# print(analyze_text("'dfd' ''foo  bar' foo-bar foo'bar'"))
+# print(analyze_text("11 22 33 11 22 11' 33')()"))
+# print(analyze_text(text))
+# print(analyze_text(12345))  
+# print(analyze_text(""))  
+# print(analyze_text("!!! ??? ... ;;::--''")) 
 
-print(analyze_text("-dff- "))
+# print(analyze_text("-dff- "))
+# print(analyze_text("---dff--- "))
+
