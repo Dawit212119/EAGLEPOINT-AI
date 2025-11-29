@@ -20,20 +20,20 @@ function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-async function fetchDataWithRetry(url, maxRetires = 3) {
+async function fetchDataWithRetry(url, maxRetries = 3) {
 
     let attempt = 0;
-    while (attempt <= maxRetires) {
+    while (attempt <= maxRetries) {
         try {
             const response = await mockAPi(url);
             return response;
         } catch (error) {
             attempt++;
             console.warn(`Attempt ${attempt} failed: ${error.message}`);
-            if (attempt > maxRetires) {
-                throw new Error(`All ${maxRetires} attempts failed for ${url}`);
+            if (attempt > maxRetries) {
+                throw new Error(`All ${maxRetries} attempts failed for ${url}`);
             }
-            await wait(500); // wait before retrying
+            await wait(1000); // wait before retrying
 
         }
     }

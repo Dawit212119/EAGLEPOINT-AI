@@ -11,7 +11,7 @@ def analyze_text(text):
                 "word_count": 0,
                 "average_word_length": 0,
                 "longest_words": [],
-                "word_frequencies": {}
+                "word_frequency": {}
             }
 
         #  Replace multiple consecutive apostrophes with a space
@@ -34,7 +34,7 @@ def analyze_text(text):
                 "word_count": 0,
                 "average_word_length": 0,
                 "longest_words": [],
-                "word_frequencies": {}
+                "word_frequency": {}
             }
 
         
@@ -58,7 +58,7 @@ def analyze_text(text):
             "word_count": word_count,
             "average_word_length": avg_length,
             "longest_words": longest,
-            "word_frequencies": dict(frequency)
+            "word_frequency": dict(frequency)
         }
 
     except TypeError as te:
