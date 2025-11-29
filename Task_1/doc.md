@@ -237,7 +237,55 @@ Catches:
 - Wrong input types
 - Unexpected internal errors
 
-## 5. Why This Solution Is Best
+## 5. Problems Faced (New Section)
+
+### Problem 1 — Apostrophes breaking words
+
+Examples like:
+
+café''s
+
+foo''bar
+
+produce invalid tokens.
+
+Regex alone treats these as broken words.
+
+**Fix:** Replace multiple apostrophes with a space.
+
+### Problem 2 — Hyphenated words splitting incorrectly
+
+Default `.split()` turns:
+
+state-of-the-art
+
+into:
+
+state, of, the, art — which is wrong.
+
+**Fix:** Custom regex to keep valid hyphenated words intact.
+
+### Problem 3 — Unicode characters not detected
+
+Characters like:
+
+naïve, über, café
+
+are ignored by simple `\w` on some regex engines.
+
+**Fix:** Use Python's Unicode-aware `\w` + extended pattern structure.
+
+### Problem 4 — Commas and colons creating empty tokens
+
+A naive split creates:
+
+`["hello", "", "world"]`
+
+which pollutes counts.
+
+**Fix:** `re.split` and post-filtering cleanly remove empty chunks.
+
+## 6. Why This Solution Is Best
 
 - ✔ Accurate word extraction
 - ✔ Supports Unicode (café, über)
