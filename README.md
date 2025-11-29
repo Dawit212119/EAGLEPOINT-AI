@@ -50,7 +50,7 @@ Ensure you have **Python 3.x** and **Node.js** installed.
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/Dawit212119/EAGLEPOINT-AI.git>
    cd EAGLEPOINT-AI
    ```
 
